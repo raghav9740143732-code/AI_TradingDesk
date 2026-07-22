@@ -23,3 +23,10 @@ def list_clients(
     db: Session = Depends(get_db),
 ):
     return service.list_clients(db)
+
+@router.delete("/{client_id}")
+def delete_client(
+    client_id: int,
+    db: Session = Depends(get_db),
+):
+    return service.delete_client(db, client_id)

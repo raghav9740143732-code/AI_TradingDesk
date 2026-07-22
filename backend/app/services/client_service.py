@@ -14,3 +14,6 @@ class ClientService:
 
     def list_clients(self, db: Session):
         return self.repository.get_all(db)
+    
+    def delete_client(self, db: Session, client_id: int):
+        return self.repository.delete(db, client_id)
